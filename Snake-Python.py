@@ -35,16 +35,12 @@ while True:
 
     if key == curses.KEY_UP:
         new_head[0] -= 1
-        w.addch(1, 1, last_key)
     if key == curses.KEY_DOWN:
         new_head[0] += 1
-        w.addch(1, 1, last_key)
     if key == curses.KEY_LEFT:
         new_head[1] -= 1
-        w.addch(1, 1, last_key)
     if key == curses.KEY_RIGHT:
         new_head[1] += 1
-        w.addch(1, 1, last_key)
 
     snake.insert(0, new_head)
 
