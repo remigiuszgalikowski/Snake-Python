@@ -22,7 +22,6 @@ food = [sh//2, sw//2]
 w.addch(int(food[0]), int(food[1]), int(curses.ACS_PI))
 
 key = curses.KEY_RIGHT
-last_key = 'R'
 
 while True:
     next_key = w.getch()
@@ -36,19 +35,15 @@ while True:
 
     if key == curses.KEY_UP:
         new_head[0] -= 1
-        last_key = 'U'
         w.addch(1, 1, last_key)
-    if key == curses.KEY_DOWN and last_key != 'U':
+    if key == curses.KEY_DOWN:
         new_head[0] += 1
-        last_key = 'D'
         w.addch(1, 1, last_key)
     if key == curses.KEY_LEFT:
         new_head[1] -= 1
-        last_key = 'L'
         w.addch(1, 1, last_key)
     if key == curses.KEY_RIGHT:
         new_head[1] += 1
-        last_key = 'R'
         w.addch(1, 1, last_key)
 
     snake.insert(0, new_head)
